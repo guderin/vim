@@ -108,32 +108,32 @@ Esc	exit insert mode
 EDITING
 ==============================================================================
 
-r	replace a single character (does not use insert mode)
-R	enter Insert mode, replacing characters rather than inserting
-J	join line below to the current one
-cc	change (replace) an entire line
-cw	change (replace) to the end of word
-c$	change (replace) to the end of line
-s	delete character at cursor and substitute text
-S	delete line at cursor and substitute text (same as cc)
-xp	transpose two letters (delete and paste, technically)
-u	undo
-CTRL-r	redo
-.	repeat last command
-~	switch case
-g~iw	switch case of current word
-gUiw	make current word uppercase
-guiw	make current word lowercase
-gU$	make uppercase until end of line
-gu$	make lowercase until end of line
->>	indent line one column to right
-<<	indent line one column to left
-==	auto-indent current line
-ddp	swap current line with next
-ddkp	swap current line with previous
-:%retab             fix spaces / tabs issues in whole file
-:r [name]           insert the file [name] below the cursor.
-:r !{cmd}           execute {cmd} and insert its standard output below the cursor.
+r		replace a single character (does not use insert mode)
+R		enter Insert mode, replacing characters rather than inserting
+J		join line below to the current one
+cc		change (replace) an entire line
+cw		change (replace) to the end of word
+c$		change (replace) to the end of line
+s		delete character at cursor and substitute text
+S		delete line at cursor and substitute text (same as cc)
+xp		transpose two letters (delete and paste, technically)
+u		undo
+CTRL-r		redo
+.		repeat last command
+~		switch case
+g~iw		switch case of current word
+gUiw		make current word uppercase
+guiw		make current word lowercase
+gU$		make uppercase until end of line
+gu$		make lowercase until end of line
+>>		indent line one column to right
+<<		indent line one column to left
+==		auto-indent current line
+ddp		swap current line with next
+ddkp		swap current line with previous
+:%retab		fix spaces / tabs issues in whole file
+:r [name]	insert the file [name] below the cursor.
+:r !{cmd}	execute {cmd} and insert its standard output below the cursor.
 
 ==============================================================================
 DELETING TEXT
@@ -150,33 +150,32 @@ D		delete from cursor to end of line
 COPYING AND MOVING TEXT
 ==============================================================================
 
-yw                  yank word
-yy                  yank (copy) a line
-2yy                 yank 2 lines
-y$                  yank to end of line
+yw		yank word
+yy		yank (copy) a line
+2yy		yank 2 lines
+y$		yank to end of line
 p		put (paste) the clipboard after cursor/current line
 P		put (paste) before cursor/current line
-:set paste          avoid unexpected effects in pasting
+:set paste	avoid unexpected effects in pasting
 
-:registers          display the contents of all registers
-"xyw                yank word into register x
-"xyy                yank line into register x
-:[range]y x         yank [range] lines into register x
-"xp                 put the text from register x after the cursor
-"xP                 put the text from register x before the cursor
-"xgp                just like "p", but leave the cursor just after the new text
-"xgP                just like "P", but leave the cursor just after the new text
-:[line]put x        put the text from register x after [line]
+:registers	display the contents of all registers
+"xyw		yank word into register x
+"xyy		yank line into register x
+:[range]y x	yank [range] lines into register x
+"xp		put the text from register x after the cursor
+"xP		put the text from register x before the cursor
+"xgp		just like "p", but leave the cursor just after the new text
+"xgP		just like "P", but leave the cursor just after the new text
+:[line]put x	put the text from register x after [line]
 
 ==============================================================================
 MACROS
 ==============================================================================
 
-qa                  start recording macro 'a'
+qa	start recording macro 'a'
 q	end recording macro
-@a                  replay macro 'a'
-@:                  replay last command
-
+@a	replay macro 'a'
+@:	replay last command
 
 ==============================================================================
 VISUAL MODE
@@ -186,14 +185,14 @@ v	start visual mode, mark lines, then do command (such as y-yank)
 V	start linewise visual mode
 o	move to other end of marked area
 U	upper case of marked area
-CTRL-v              start visual block mode
+CTRL-v	start visual block mode
 O	move to other corner of block
-aw                  mark a word
-ab                  a () block (with braces)
-ab                  a {} block (with brackets)
-ib                  inner () block
-ib                  inner {} block
-Esc                 exit visual mode
+aw	mark a word
+ab	a () block (with braces)
+ab	a {} block (with brackets)
+ib	inner () block
+ib	inner {} block
+Esc	exit visual mode
 
 ==============================================================================
 Visual mode commands
@@ -210,11 +209,11 @@ d	delete marked text
 SPELLING
 ==============================================================================
 
-]s                  next misspelled word
-[s                  previous misspelled word
-zg                  add word to wordlist
-zug                 undo last add word
-z=                  suggest word
+]s	next misspelled word
+[s	previous misspelled word
+zg	add word to wordlist
+zug	undo last add word
+z=	suggest word
 
 ==============================================================================
 EXITING
@@ -235,17 +234,16 @@ ZQ                  quit current file and exit (same as ":q!").
 SEARCH/REPLACE
 ==============================================================================
 
-/pattern	 search for pattern
-?pattern	 search backward for pattern
-n	        repeat search in same direction
-N	        repeat search in opposite direction
-*	        search forward, word under cursor
-#	        search backward, word under cursor
-:%s/old/new/g               replace all old with new throughout file
-:%s/old/new/gc              replace all old with new throughout file with confirmation
+/pattern	search for pattern
+?pattern	search backward for pattern
+n		repeat search in same direction
+N		repeat search in opposite direction
+*		search forward, word under cursor
+#		search backward, word under cursor
+:%s/old/new/g	replace all old with new throughout file
+:%s/old/new/gc	replace all old with new throughout file with confirmation
 :argdo %s/old/new/gc | wq   open multiple files and run this command to replace old 
-	         with new in every file with confirmation, save and quit
-
+	         	    with new in every file with confirmation, save and quit
 
 ==============================================================================
 MULTIPLE FILES
@@ -297,14 +295,12 @@ PROGRAMMING
 ==============================================================================
 
 %	show matching brace, bracket, or parenthese
-gf                  edit the file whose name is under or after the cursor
-gd                  when the cursor is on a local variable or function, jump to its declaration
-''                  return to the line where the cursor was before the latest jump
-gi                  return to insert mode where you inserted text the last time
-CTRL-o              move to previous position you were at
-CTRL-i              move to more recent position you were at
-
-
+gf	edit the file whose name is under or after the cursor
+gd	when the cursor is on a local variable or function, jump to its declaration
+''	return to the line where the cursor was before the latest jump
+gi	return to insert mode where you inserted text the last time
+CTRL-o	move to previous position you were at
+CTRL-i	move to more recent position you were at
 
 *************
 *  PLUGINS  *
@@ -314,9 +310,9 @@ CTRL-i              move to more recent position you were at
 ACK (plugin)
 ============
 
-:Ack                Search recursively in directory
+:Ack	Search recursively in directory
 o	to open (same as enter)
-go                  to preview file (open but maintain focus on ack.vim results)
+go	to preview file (open but maintain focus on ack.vim results)
 t	to open in new tab
 T	to open in new tab silently
 q	to close the quickfix window
@@ -325,16 +321,16 @@ q	to close the quickfix window
 CHEAT (plugin)
 ==============
 
-:Cheat              open cheat sheet (with autocomplete)
-<leader>ch          open cheat sheet for word under the cursor
+:Cheat		open cheat sheet (with autocomplete)
+<leader>ch	open cheat sheet for word under the cursor
 
 
 GIST (plugin)
 =============
 
-:Gist               post whole text to gist
-:Gist XXXXX         get gist XXXXX
-:Gist -l            list my gists
+:Gist		post whole text to gist
+:Gist XXXXX	get gist XXXXX
+:Gist -l	list my gists
 
 
 GUNDO (plugin)
@@ -366,13 +362,13 @@ NERDTREE (plugin)
 File
 ----
 o	open in prev window
-go                  preview
+go	preview
 t	open in new tab
 T	open in new tab silently
 i	open split
-gi                  preview split
+gi	preview split
 s	open vsplit
-gs                  preview vsplit
+gs	preview vsplit
 
 Directory
 ---------
@@ -395,8 +391,8 @@ P	go to root
 p	go to parent
 K	go to first child
 J	go to last child
-CTRL-j              go to next sibling
-CTRL-k              go to prev sibling
+CTRL-j	go to next sibling
+CTRL-k	go to prev sibling
 
 Filesystem
 ----------
@@ -406,7 +402,7 @@ U	move tree root up a dir but leave old root open
 r	refresh cursor dir
 R	refresh current root
 m	show menu
-cd                  change the CWD to the selected dir
+cd	change the CWD to the selected dir
 
 Tree filtering
 --------------
@@ -614,7 +610,7 @@ CTRL-y              go to next tag of attribute in sparkup plugin
 <leader>g           toggle Gundo window
 
 IMG<CR>             show image browser to insert image tag with src, width and height
-b	insert image tag with dimensions from NERDTree 
+b			insert image tag with dimensions from NERDTree 
 	 (http://stackoverflow.com/questions/5707925/vim-image-placement)
 
 
